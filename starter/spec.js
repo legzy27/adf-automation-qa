@@ -82,10 +82,7 @@ describe("ADF Demo App", function() {
   });
 
   it("Select folder of username and delete ", function() {
-    browser
-    .manage()
-    .timeouts()
-    .implicitlyWait(50000);
+    browser.sleep(4000);
   
     var elm = element(by.xpath('//*[@id="document-list-container"]/adf-upload-drag-area/div/div/adf-document-list/adf-datatable/div/div[2]/adf-datatable-row[5]/div[2]'));
     var EC = protractor.ExpectedConditions;
