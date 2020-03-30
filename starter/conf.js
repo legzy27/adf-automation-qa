@@ -10,6 +10,7 @@ exports.config = {
 
   onPrepare: () => {
       // set browser size...
+     // browser.manage().window().setSize(1280, 1024);
       browser.manage().window().setSize(1024, 800);
 
       // better jasmine 2 reports...
