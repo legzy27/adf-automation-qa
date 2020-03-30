@@ -75,16 +75,20 @@ describe("ADF Demo App", function() {
   it("Click new folder is displayed, enter name add and create, you see error message ", function() {
     browser.sleep(4000);
     element(by.id("adf-folder-name-input")).sendKeys("Legzy27");
-    browser.sleep(1000);
+    browser.sleep(2000);
     element(by.id("adf-folder-create-button")).click();
-    browser.sleep(1000);
+    browser
+    .manage()
+    .timeouts()
+    .implicitlyWait(50000);
     element(by.id("adf-folder-cancel-button")).click();
   });
 
   it("Select folder of username and delete ", function() {
     browser.sleep(4000);
   
-    var elm = element(by.xpath('//*[@id="document-list-container"]/adf-upload-drag-area/div/div/adf-document-list/adf-datatable/div/div[2]/adf-datatable-row[5]/div[2]'));
+    var elm = element(by.xpath
+      ('//*[@id="document-list-container"]/adf-upload-drag-area/div/div/adf-document-list/adf-datatable/div/div[2]/adf-datatable-row[5]/div[2]/div/div'));
     var EC = protractor.ExpectedConditions;
      browser.wait(EC.elementToBeClickable(elm), 5000);
      elm.click();

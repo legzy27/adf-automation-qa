@@ -7,11 +7,14 @@ require("babel-register")({
 exports.config = {
   specs: ['spec.js'],
   framework: 'jasmine',
+  getPageTimeout: 30000,
+  allScriptsTimeout: 30000,
+
 
   onPrepare: () => {
       // set browser size...
-     // browser.manage().window().setSize(1280, 1024);
-      browser.manage().window().setSize(1024, 800);
+      browser.manage().window().setSize(1600, 1000);
+     // browser.manage().window().setSize(1024, 800);
 
       // better jasmine 2 reports...
       const SpecReporter = require('jasmine-spec-reporter');
